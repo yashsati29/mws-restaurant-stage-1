@@ -15,7 +15,7 @@ body {
 	background-color: #fdfdfd;
 	margin: auto;
 	position:relative;
-	max-width: 1200px;
+	max-width: 100%;
 	padding: 0;
 }
 img {
@@ -186,7 +186,7 @@ h1 {
 	display: block;
 	margin: 0;
 }
-#restaurants-list li h1 {
+#restaurants-list li h2 {
 	color: #621d2b;
 	font-family: Arial,sans-serif;
 	font-size: 12pt;
