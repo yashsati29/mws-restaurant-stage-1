@@ -10,7 +10,7 @@
    static get DATABASE_URL() {
     const port = 8000 // Change this to your server port
     return `./data/restaurants.json`;
-}
+  }
 
   /**
    * Fetch all restaurants.
@@ -27,9 +27,9 @@
       	const error = (`Request failed. Returned status of ${xhr.status}`);
       	callback(error, null);
       }
-  };
-  xhr.send();
-}
+    };
+    xhr.send();
+  }
 
   /**
    * Fetch a restaurant by its ID.
@@ -46,9 +46,9 @@
         } else { // Restaurant does not exist in the database
         	callback('Restaurant does not exist', null);
         }
-    }
-});
-}
+      }
+    });
+  }
 
   /**
    * Fetch restaurants by a cuisine type with proper error handling.
@@ -62,9 +62,9 @@
         // Filter restaurants to have only given cuisine type
         const results = restaurants.filter(r => r.cuisine_type == cuisine);
         callback(null, results);
-    }
-});
-}
+      }
+    });
+  }
 
   /**
    * Fetch restaurants by a neighborhood with proper error handling.
@@ -78,9 +78,9 @@
         // Filter restaurants to have only given neighborhood
         const results = restaurants.filter(r => r.neighborhood == neighborhood);
         callback(null, results);
-    }
-});
-}
+      }
+    });
+  }
 
   /**
    * Fetch restaurants by a cuisine and a neighborhood with proper error handling.
@@ -99,9 +99,9 @@
         	results = results.filter(r => r.neighborhood == neighborhood);
         }
         callback(null, results);
-    }
-});
-}
+      }
+    });
+  }
 
   /**
    * Fetch all neighborhoods with proper error handling.
@@ -117,9 +117,9 @@
         // Remove duplicates from neighborhoods
         const uniqueNeighborhoods = neighborhoods.filter((v, i) => neighborhoods.indexOf(v) == i)
         callback(null, uniqueNeighborhoods);
-    }
-});
-}
+      }
+    });
+  }
 
   /**
    * Fetch all cuisines with proper error handling.
@@ -135,9 +135,9 @@
         // Remove duplicates from cuisines
         const uniqueCuisines = cuisines.filter((v, i) => cuisines.indexOf(v) == i)
         callback(null, uniqueCuisines);
-    }
-});
-}
+      }
+    });
+  }
 
   /**
    * Restaurant page URL.
@@ -150,7 +150,7 @@
    * Restaurant image URL.
    */
    static imageUrlForRestaurant(restaurant) {
-   	return (`/img/${restaurant.photograph}`);
+   	return (`./img/${restaurant.photograph}`);
    }
 
   /**
@@ -165,7 +165,7 @@
     	})
     marker.addTo(newMap);
     return marker;
-} 
+  } 
   /* static mapMarkerForRestaurant(restaurant, map) {
     const marker = new google.maps.Marker({
       position: restaurant.latlng,
@@ -175,6 +175,6 @@
       animation: google.maps.Animation.DROP}
     );
     return marker;
-} */
+  } */
 
 }
